@@ -1,0 +1,112 @@
+<ng-container *ngIf="moviesDetail">
+  <div class="bg-movies-detail">
+    <img
+      [src]="
+        'https://image.tmdb.org/t/p/original/' + moviesDetail.backdrop_path
+      "
+      [alt]=""
+    />
+  </div>
+  <div class="wrapper-desc-movies-detail">
+    <div class="title-movies-detail">
+      <h2>{{ moviesDetail.title }}</h2>
+    </div>
+    <div class="wrapper-rating-movies-detail">
+      <span class="app-icon">star</span>
+      <span class="rating-value">{{ moviesDetail.vote_average }}</span>
+      <span>/ 10</span>
+      <span> review {{ moviesDetail.vote_count }}</span>
+      <span>{{ moviesDetail.release_date | date: "yyyy" }} </span>
+    </div>
+    <div class="desc-movies-detail">
+      <p>{{ moviesDetail.overview }}</p>
+    </div>
+  </div>
+  <div class="tabview-movies-detail">
+    <p-tabView>
+      <p-tabPanel header="Overview">
+        <div class="grid">
+          <div class="col-12 md:col-4">
+            <img
+              [src]="
+                'https://image.tmdb.org/t/p/original/' +
+                moviesDetail.backdrop_path
+              "
+              [alt]="moviesDetail.title"
+              width="100%"
+              height="100%"
+            />
+          </div>
+          <div class="col-12 md:col-8">
+            <div class="wrapper-overview">
+              <div class="title-overview">
+                <h2>Overview</h2>
+              </div>
+              <div class="desc-overview">
+                <p>{{ moviesDetail.overview }}</p>
+              </div>
+              <div class="release-overview">
+                <strong>Release Date :</strong
+                ><span class="yellow-span">{{
+                  moviesDetail.release_date
+                }}</span>
+              </div>
+              <div class="revenue-overview">
+                <strong>Revenue :</strong>
+                <span class="yellow-span">${{moviesDetail.revenue}}</span>
+              </div>
+              <div class="dutaion-overview">
+                <strong>Duration :</strong>
+                <span class="yellow-span">102 min</span>
+              </div>
+              <div class="status-overview">
+                <strong>Status :</strong>
+                <span class="yellow-span">{{moviesDetail.status}}</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </p-tabPanel>
+      <p-tabPanel header="Videos">
+        <ng-container *ngFor="let item of moviesVideos">
+          <div class="grid">
+            <div class="col-12 md:col-6 lg:col-6">
+              <!-- <iframe
+                width="560"
+                height="315"
+                [src]="'https://www.youtube.com/embed/'+item.key"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe> -->
+              <pre>
+                {{'www.youtube.com/'+item.key}}
+              </pre>
+            </div>
+          </div>
+        </ng-container>
+      </p-tabPanel>
+      <p-tabPanel header="Photos">
+        <div class="grid">
+          <ng-container *ngFor="let item of moviesImage?.backdrops">
+            <div class="sx:col-12 md:col-4 lg:col-4">
+              <img
+                [src]="'https://image.tmdb.org/t/p/original' + item.file_path"
+                width="100%"
+              />
+            </div>
+          </ng-container>
+        </div>
+      </p-tabPanel>
+    </p-tabView>
+  </div>
+  <h2 style="padding:0.5rem;">Actor</h2>
+  <p-carousel [numVisible]="6" [numScroll]="1" *ngIf="moviesCredits" [value]="moviesCredits.cast">
+    <ng-template let-item pTemplate="item">
+        <div class="cast">
+            <img [src]="'https://image.tmdb.org/t/p/original'+item.profile_path" [alt]="item.name" width="100%">
+        </div>
+    </ng-template>
+</p-carousel>
+</ng-container>

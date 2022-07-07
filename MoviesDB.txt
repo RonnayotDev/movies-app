@@ -1,0 +1,74 @@
+https://www.themoviedb.org/
+https://developers.themoviedb.org/3
+get ดึง
+put แก้ไข
+post เพิ่ม
+delete ลบ
+
+API Key (v3 auth)
+3415cdae683353d89adf841986d217f9
+
+
+Example API Request
+https://api.themoviedb.org/3/movie/550?api_key=3415cdae683353d89adf841986d217f9
+
+
+API Read Access Token (v4 auth)
+eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNDE1Y2RhZTY4MzM1M2Q4OWFkZjg0MTk4NmQyMTdmOSIsInN1YiI6IjYyYzNkMTkxMmEyMTBjMDZjYmQ1Yzk0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.o5lbi3WxjeJz_qSy-IPxqP-f5cBUnJW1a4LRPwJWw_w
+
+
+Extension manage API
+Thunder Client
+
+CSS
+#set css global in style.css
+Normalized CSS
+Installing Font 
+google font ROBOTO
+
+installing grid system 
+Primeflex
+
+STEP
+
+create header use ng g c shared/header
+create footer use ng c shared/footer
+
+create header navbar
+use routerLink for a href
+set css header
+
+create footer 
+
+create home use ng g c pages/home
+create movies use ng g c pages/movies
+
+set path in app-routing module
+set path to home component > path:"**" , redirectTo:""
+
+create services use ng g s services/moviesv
+import httpClient for fetch API
+create property in construc ex. private http = HttpClient
+create function for get api url
+
+รับค่าจาก Service ใน Constructor ex. private moviesService = MoviesService
+
+สร้างตัวแปล เป็น array เปล่า แล้วดึง API มาใช้ .subscribe((response) => {
+
+})
+
+
+loop use @Input รับค่าจาก Model ที่แปลงจาก JSON เป็น TypeScript  items  แล้วไป ngFor
+
+install angular animation
+
+primeNG for pagination
+
+
+ex edit api <a routerLink="['edit',user.id]">edit</a>
+
+ชี้ตำแหน่ง ID จาก URL
+รับ activatedroute ใน Constructor
+activatedroute.params.subscribe((params : any) => {})
+
+ใช้ routerLink ในการส่งไอดี

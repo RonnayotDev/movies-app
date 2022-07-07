@@ -1,0 +1,6 @@
+ng-container{
+    padding: 1rem;
+}
+.genre-links:hover{
+    color: #d4af37;
+}

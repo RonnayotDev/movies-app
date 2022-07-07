@@ -1,0 +1,39 @@
+header .navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem;
+  height: 65px;
+  background-color: #212121;
+  margin: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+.navbar-logo {
+  display: block;
+}
+.navbar-logo img {
+  width: 60px;
+}
+.navbar-links {
+  display: block;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.navbar-links li {
+  display: inline;
+  margin-right: 15px;
+}
+.navbar-links li a:hover {
+  color: #d4af37;
+}
+.logo-txt {
+  font-weight: bold;
+  font-size: 21px;
+  padding: 0.5rem;
+}
+@media screen and (max-width: 767px) {
+  .logo-txt {
+    font-size: 14px;
+  }
+}
